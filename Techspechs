@@ -1,0 +1,24 @@
+There is nothing about the difficulty of the game. Once you open the gate does the game end?
+
+
+Program a background (I wasn't really given much. I don't know how the actual background and map should look)
+
+Program the teachers/guards that move around the map.
+  How do they interact with the students? Is it if the guards see the students or if they walk into them?
+  Are the guards randomly moving or do their movements follow a pattern?
+  At what speed do the guards move? How big are they?
+
+Puzzles
+  Are the puzzles randomly placed around the map or is there a certain puzzle per room? What even is a puzzle? Is it a question or is it like a minigame?
+
+Minigames
+  What are the minigames? Do you go to another screen to play them?
+
+Student 1 (Sprite1)
+  At what speed do they move?
+  Code WASD for moving up, left, down, right
+  Code "i" as a way for people to see the rest of the clues/hints they have discovered
+  Have some array that stores all of the clues you have gotten
+
+Student 2 (Sprite1)
+  Code arrow keys for moving up, left, down, right
