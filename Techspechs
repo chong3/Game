@@ -1,0 +1,44 @@
+There is nothing about the difficulty of the game. Once you open the gate does the game end?
+
+
+Program a background (I wasn't really given much. I don't know how the actual background and map should look)
+
+Program the teachers/guards that move around the map.
+  How do they interact with the students? Is it if the guards see the students or if they walk into them?
+  Are the guards randomly moving or do their movements follow a pattern?
+  At what speed do the guards move? How big are they?
+
+Puzzles
+  Are the puzzles randomly placed around the map or is there a certain puzzle per room? What even is a puzzle? Is it a question or is it like a minigame?
+
+Minigames
+  What are the minigames? Do you go to another screen to play them?
+
+Student 1 (Sprite1)
+  At what speed do they move?
+  Code WASD for moving up, left, down, right
+  Space means select
+  Code "i" as a way for people to see the rest of the clues/hints they have discovered
+  Have some array that stores all of the clues you have gotten
+
+Student 2 (Sprite1)
+  Code arrow keys for moving up, left, down, right
+  Enter means select
+
+Order of things to Code:
+  Create the course/map of the game. Where do you go and how many rooms are there?
+
+  Code the movements of the two students (variables: student1, student2)
+
+  Code the movements made by the guards/teachers
+
+  Code the interactions students have with guards. If the 
+
+  Code the places where the students interact with the clues
+
+  Code the minigames (I have no clue what this means but maybe just like have a cycle of 3 made up minigames that change screens when you interact with the clues)
+    These minigames will likely take the most time and be hardest to program because they are a whole different interface.
+  Code the way the clues are stored (Use an array to hold all of the clues and make sure you can access them by clicking "i")
+
+  Code the final gate and figure out how the person wins the game
+    Does the person just win, is there a screen that says "Winner!"?
