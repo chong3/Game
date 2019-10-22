@@ -1,44 +1,73 @@
-There is nothing about the difficulty of the game. Once you open the gate does the game end?
+Difficulty of game
+  Increases every level
+  Flashlight area increases every level
 
-
-Program a background (I wasn't really given much. I don't know how the actual background and map should look)
+Program a background
+  Square shaped room
+  25 desks and chairs around the size of a penny randomly located inside room. 
+  Desks and chairs are randomly placed so that each level looks different.
+  10 different levels.
 
 Program the teachers/guards that move around the map.
-  How do they interact with the students? Is it if the guards see the students or if they walk into them?
-  Are the guards randomly moving or do their movements follow a pattern?
-  At what speed do the guards move? How big are they?
+  3 teachers/guards move randomly around the room. 
+  Moves 1.2x faster than the player.
+  If two guards encounter each other, face-to-face, the guards overlap and continue to move in the same direction they were
+  moving
+  Chooses a random direction to move if they encounter a wall or corner
+  Moves towards textbook if player triggers it. Speed doubles when walking towards textbook. Speed reset after guard reaches
+  textbook.
+  About the size of a quarter.
+  Carries flashlight that shines area in front of them. The area the flashlight shines increases as level increases.
 
-Puzzles
-  Are the puzzles randomly placed around the map or is there a certain puzzle per room? What even is a puzzle? Is it a question or is it like a minigame?
-
-Minigames
-  What are the minigames? Do you go to another screen to play them?
+Clues
+  Shaped like a paper
+  Size about half the size of the player character
+  If player walks over clue, the screen displays a letter that is part of a randomly generated 30 letter string. The clues can be viewed again inside
+  the inventory, which can be opened by pressing i. 
+  
+ Inventory
+  Can be displayed by pressing i. 
+  Displays the clues the player has collected in the order of they collected it.
+  
+ Textbooks
+  Shaped like books
+  Size of a penny
+  Randomly placed in each level
+  10 textbooks per level
+  Creates sound when student is within radius of 3 of textbook.
+  
 
 Student 1 (Sprite1)
-  At what speed do they move?
+  Walks at 
   Code WASD for moving up, left, down, right
-  Space means select
+  Enter to exit clue screen
   Code "i" as a way for people to see the rest of the clues/hints they have discovered
   Have some array that stores all of the clues you have gotten
+  Size of a penny
 
-Student 2 (Sprite1)
-  Code arrow keys for moving up, left, down, right
-  Enter means select
+Multiplayer
+  Player 1 controls: W and D 
+  Player 2 controls: Right and left arrow
+  Player 1 moves character up and down, player 2 moves character left and right.
+  Enter to exit clue screen
 
 Order of things to Code:
-  Create the course/map of the game. Where do you go and how many rooms are there?
+  Create the course/map of the game.
 
-  Code the movements of the two students (variables: student1, student2)
+  Code the movements of the student (variables: student1)
 
   Code the movements made by the guards/teachers
+  
+  Code the guards' flashlights
 
-  Code the interactions students have with guards. If the 
-
+  Code the interactions students have with guards. 
+  
+  Code the textbooks
+  
   Code the places where the students interact with the clues
-
-  Code the minigames (I have no clue what this means but maybe just like have a cycle of 3 made up minigames that change screens when you interact with the clues)
-    These minigames will likely take the most time and be hardest to program because they are a whole different interface.
+  
+  
   Code the way the clues are stored (Use an array to hold all of the clues and make sure you can access them by clicking "i")
 
-  Code the final gate and figure out how the person wins the game
-    Does the person just win, is there a screen that says "Winner!"?
+  Code the final gate and ending screen
+    
