@@ -1,73 +1,113 @@
 Difficulty of game
-  Increases every level
-  Flashlight area increases every level
+  Guard's flashlight area increases every level
+  Game ends if location of guard is equal to location of player. Displays "GAME OVER" screen.
+  Player needs to collect 3 clues in each level
+  10 different levels
+  Switches level after player collects all clues in level. Displays black screen for 3 seconds and switches player to new level
 
 Program a background
-  Square shaped room
-  25 desks and chairs around the size of a penny randomly located inside room. 
-  Desks and chairs are randomly placed so that each level looks different.
-  10 different levels.
+  1000 pixels by 1000 pixels square shaped room
+  25 desks and chairs around the size of a penny randomly located inside room
+  Desks and chairs 32 pixels wide and 32 pixels high
+  Desks and chairs are randomly placed so that each level looks different
+       - Requires function that randomly places objects every level
+  Dark, player can't really see except in a circle area with the radius of 64 pixels around them
+       - Difficult because area of circle needs to move along with player's movement
 
-Program the teachers/guards that move around the map.
-  3 teachers/guards move randomly around the room. 
-  Moves 1.2x faster than the player.
+Program the teachers/guards that move around the map
+  3 teachers/guards move randomly around the room
+       - Requires function that randomizes movement of guards. Difficult because of the randomized location of objects.
+  Moves 60 pixels/second
   If two guards encounter each other, face-to-face, the guards overlap and continue to move in the same direction they were
   moving
   Chooses a random direction to move if they encounter a wall or corner
   Moves towards textbook if player triggers it. Speed doubles when walking towards textbook. Speed reset after guard reaches
-  textbook.
-  About the size of a quarter.
-  Carries flashlight that shines area in front of them. The area the flashlight shines increases as level increases.
+  textbook
+       - Requires function to detect whether textbook was triggered
+  Follows player if player enters flashlight area and speed doubles while player is within flashlight area
+       - Requires function that detects if player is within flashlight area
+  50 pixels wide and 50 pixels high
+  
+ Program the flashlight
+  Guards carry flashlights that shines rectangular area in front of them. The area the flashlight shines increases as level increases.
+        - If player is in area of flashlight, guard immediately chases player and their speed doubles.
+        - Flashlight rectangular area begins with height of 64 pixels and base width of 32 pixels. Height of triangular area
+        increases by 8 every level.
+        - Requires function that moves flashlight area along with guard.
 
-Clues
+Program the clues
+  3 clues per level, randomly placed
+        - Similar function to function that randomly places objects in room
   Shaped like a paper
-  Size about half the size of the player character
-  If player walks over clue, the screen displays a letter that is part of a randomly generated 30 letter string. The clues can be viewed again inside
-  the inventory, which can be opened by pressing i. 
+  16 pixels wide and 16 pixels high
+  If player walks over clue, the screen displays a letter that is part of a randomly generated 30 letter string and the order
+  of the letter within the string
+        - Requires function that displays the screen showing the clue when player location is equal to location of clue
+  The clues can be viewed again inside the inventory, which can be opened by pressing i
   
- Inventory
-  Can be displayed by pressing i. 
-  Displays the clues the player has collected in the order of they collected it.
+ Program inventory
+  Can be displayed by pressing i
+        - Requires function that displays inventory screen when player presses i
+  Inventory screen displays the clues the player has collected in the order they collected it
   
- Textbooks
+ Program textbooks
   Shaped like books
-  Size of a penny
+  20 pixels wide and 20 pixels high
   Randomly placed in each level
+         - Can use function that randomly placed objects in maze
   10 textbooks per level
-  Creates sound when student is within radius of 3 of textbook.
-  
-
-Student 1 (Sprite1)
-  Walks at 
+  Creates bang sound when textbook is within 32 pixels of player
+         - Requires function that detects if player is within the area
+         - Function plays sound when player is in area
+         
+ Program final lock
+   Black screen with 30 white lines centered at the screen that displays what the player enters
+         - Requires function that compares string entered with the randomly generated string
+   Player has 2 tries to enter in correct string
+    
+ Student 1 (Sprite1)
+  Walks 50 pixels/second
   Code WASD for moving up, left, down, right
   Enter to exit clue screen
   Code "i" as a way for people to see the rest of the clues/hints they have discovered
   Have some array that stores all of the clues you have gotten
-  Size of a penny
+  32 pixels and 32 pixels high
+  Can only see in a circle area with radius of 64 around them
+  
+Timer (Variables: time, bestTime)
+  Keeps track of how long the player has been playing the game
+  Timer ends when either player dies or beats the game
+  Timer displayed on top right corner
+  If player beat the game, the time game was completed is compared to the best time
+          - Requires function that compares time to best time
 
 Multiplayer
   Player 1 controls: W and D 
   Player 2 controls: Right and left arrow
-  Player 1 moves character up and down, player 2 moves character left and right.
+         - Requires function that changes control for character when multiplayer mode is chosen
+  Player 1 moves character up and down, player 2 moves character left and right
   Enter to exit clue screen
 
 Order of things to Code:
   Create the course/map of the game.
+    - Need map first to code other objects movements and locations
 
   Code the movements of the student (variables: student1)
-
+    - Need a controllable object to test other features
+    
   Code the movements made by the guards/teachers
+    - Need guards to code interactions between player and the guards
   
   Code the guards' flashlights
-
+    - Vital 
   Code the interactions students have with guards. 
   
   Code the textbooks
   
-  Code the places where the students interact with the clues
-  
+  Code the clues and random location of clues
   
   Code the way the clues are stored (Use an array to hold all of the clues and make sure you can access them by clicking "i")
 
-  Code the final gate and ending screen
+  Code the final gate,timer, and ending screen
     
+  Code multiplayer function
