@@ -5,7 +5,7 @@ The controls for the first player is w(forward), a(left), s(back), d(right). In 
 
 While moving around the room, if the guards meet face to face, the guards overlap and continue to move in the direction they were moving. If the guard encounters a wall/corner, the guard randomly chooses a direction to move in. 
 The clues are located on the ground in the room and not on any object(desks/chairs). 
-The characters and objects/obstacles are 32 pixels wide by 32 pixels high. The textbooks are 20 pixels wide by 20 pixels high. The guards are 50 pixels wide by 50 pixels high. The clues are shaped like paper and are 16 pixels wide by 16 pixels high. 
+The characters (Sprite #1) and objects/obstacles (Table and chair) are 32 pixels wide by 32 pixels high. The textbooks are 20 pixels wide by 20 pixels high. The guards (Sprite #2) are 50 pixels wide by 50 pixels high. The clues are shaped like paper and are 16 pixels wide by 16 pixels high. 
 
 At the end of the last level, the player must compile all the codes to spell out a randomly generated string that must be entered to allow the players to escape. The screen is just a black screen that displays 30 lines where the player can type in the final string. The player can view the codes again by pressing i and viewing the inventory. The inventory
 lists the codes in the order the player collected them. The player has 2 tries to enter in the correct code. If the player enters in the incorrect string both tries, the game ends and the player loses. If the player enters in the correct string, the timer stops and the game ends. The end screen displays the time it took for the player to complete the game on the middle of the screen and the best time is also displayed below it.
