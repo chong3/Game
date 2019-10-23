@@ -1,0 +1,18 @@
+Day 1: Create basic player character and code movement. Create a basic square shaped room
+Day 2: Create function that places objects(desks and chairs) randomly in the room
+Day 3 - 4: Create guards and code the guards random movements
+Day 5 - 6: Create the guard flashlight and the circle area(player's field of vision) that moves along with the player
+           - Area of the flashlight and its movement (moves along with guards)
+           - Circle area movement similar to flashlight movement
+Day 7 - 8: Create interactions between the guards, flashlight, and player
+           - Guards movement when player enters flashlight area
+           - Player and guard death interaction (death screen)
+Day 9 - 11: Create the function randomly placing textbooks in rooms and the interactions between the books, guards, and player
+           - Could reuse function that randomly placed objects in the room to randomly place textbooks
+           - Player activation of textbooks and sound
+           - Guards movement when player activates textbook
+Day 12: Create the randomly generated clues and the randomly generated string
+           - Could use function that randomly placed objects in the room to randomly place clues
+           - Player interaction with the clues
+Day 13: Edit flashlight mechanic so that the area the light shines increases for each level
+Day 14: Create the timer and end screen
