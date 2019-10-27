@@ -7,6 +7,16 @@ var CONTROLS = {
   }
 };
 
+var GAME = {
+  canvas : {
+    width : 1000,
+    height : 1000
+  },
+  started : true,
+  level : 1
+};
+
+
 
 if player.multiplayer == false{
 

@@ -1,15 +1,14 @@
-let player = {
-  x : 0,
-  y: 0,
-  caught: false,
-  onclue: false,
-  multiplayer: false
-};
-
-var p1x= 0;
 var p1y = 0;
 
 
 function InitializePlayer(multiplayer){
-    let p1 = new player(p1x, p1y, false, false);
-}
+  var canvas = document.getElementById('mainCanvas');
+  var context = canvas.getContext('2d');
+  context.scale(1,1);
+  
+    if(multiplayer = true){
+      PLAYER = (x = p1x, y = p1y, caught = false, onclue = false, multiplayer = true, source = "player.png");
+    else {
+      PLAYER = (x = p1x, y = p1y, caught = false, onclue = false, multiplayer = false, source = "player.png");
+    }
+};
