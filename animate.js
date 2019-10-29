@@ -1,34 +1,23 @@
 function HandlePlayerMovement(){
   if(CONTROLS.player.up = true && PLAYER.y !< 0){
-    player.y--;
-    drawImage(PLAYER.source, 1840, 2400, sWidth, sHeight, dx, dy, dWidth, dHeight)
+    PLAYER.y--;
   }
   if(CONTROLS.player.right = true && PLAYER.x !>GAME.canvas.width){
-    player.x++;
-    drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+    PLAYER.x++;
   }
   if(CONTROLS.player.left = true && PLAYER.x !< 0){
-    player.x--;
-    drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+    PLAYER.x--;
   }
   if(CONTROLS.player.down = true && PLAYER.y !> GAME.canvas.height){
-    player.y++;
-    drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+    PLAYER.y++;
   }
-
 }
 
+}
 function HandleGuardMovement(){
 
 }
 
-function RenderPlayer(){
-
-}
-
-function RenderGuard(){
-
-}
 
 function runGame() {
   var canvas = document.getElementById('mainCanvas');

@@ -16,9 +16,16 @@ var GAME = {
   level : 1
 };
 
+var PLAYER = {
+  initialized: false,
+  x : 0,
+  y : 0,
+  caught : false,
+  onclue : false,
+  multiplayer : true,
+  src : ""};
 
-
-if player.multiplayer == false{
+if (PLAYER.multiplayer == false){
 
 document.addEventListener('keydown', function(event) {
   switch (event.key) {
@@ -57,4 +64,44 @@ document.addEventListener('keyup', function(event) {
       break;
   }
 };
+}
+else if (PLAYER.multiplayer = true){
+
+  document.addEventListener('keydown', function(event) {
+    switch (event.key) {
+      case "w":
+        CONTROLS.player.up = true;
+        break;
+      case "ArrowDown":
+        CONTROLS.player.down = true;
+        break;
+      case "a":
+        CONTROLS.player.left = true;
+        break;
+      case "ArrowRight":
+        CONTROLS.player.right = true;
+        break;
+      default:
+        break;
+    }
+  };
+
+  document.addEventListener('keyup', function(event) {
+    switch (event.key) {
+      case "w":
+        CONTROLS.player.up = false;
+        break;
+      case "ArrowDown":
+        CONTROLS.player.down = false;
+        break;
+      case "a":
+        CONTROLS.player.left = false;
+        break;
+      case "ArrowRight":
+        CONTROLS.player.right = false;
+        break;
+      default:
+        break;
+    }
+  };
 }
