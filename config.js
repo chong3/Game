@@ -1,12 +1,3 @@
-var CONTROLS = {
-  player : {
-    up : false,
-    down : false,
-    left : false,
-    right : false
-  }
-};
-
 var GAME = {
   canvas : {
     width : 1000,
@@ -20,88 +11,79 @@ var PLAYER = {
   initialized: false,
   x : 0,
   y : 0,
+  latest : {
+        x : 0,
+        y : 0
+    },
   caught : false,
   onclue : false,
   multiplayer : true,
-  src : ""};
-
-if (PLAYER.multiplayer == false){
-
-document.addEventListener('keydown', function(event) {
-  switch (event.key) {
-    case "w":
-      CONTROLS.player.up = true;
-      break;
-    case "s":
-      CONTROLS.player.down = true;
-      break;
-    case "a":
-      CONTROLS.player.left = true;
-      break;
-    case "d":
-      CONTROLS.player.right = true;
-      break;
-    default:
-      break;
-  }
+  src : ""
 };
 
-document.addEventListener('keyup', function(event) {
-  switch (event.key) {
-    case "w":
-      CONTROLS.player.up = false;
-      break;
-    case "s":
-      CONTROLS.player.down = false;
-      break;
-    case "a":
-      CONTROLS.player.left = false;
-      break;
-    case "d":
-      CONTROLS.player.right = false;
-      break;
-    default:
-      break;
-  }
+var DESK = {
+  initialized: false,
+  x : 0,
+  y : 0,
+  latest : {
+        x : 0,
+        y : 0
+    },
+  src : ""
 };
-}
-else if (PLAYER.multiplayer = true){
 
-  document.addEventListener('keydown', function(event) {
-    switch (event.key) {
-      case "w":
-        CONTROLS.player.up = true;
-        break;
-      case "ArrowDown":
-        CONTROLS.player.down = true;
-        break;
-      case "a":
-        CONTROLS.player.left = true;
-        break;
-      case "ArrowRight":
-        CONTROLS.player.right = true;
-        break;
-      default:
-        break;
-    }
-  };
+var GUARD = {
+  initialized: false,
+  x : 0,
+  y : 0,
+  latest : {
+        x : 0,
+        y : 0
+    },
+  src : ""
+};
 
-  document.addEventListener('keyup', function(event) {
-    switch (event.key) {
-      case "w":
-        CONTROLS.player.up = false;
-        break;
-      case "ArrowDown":
-        CONTROLS.player.down = false;
-        break;
-      case "a":
-        CONTROLS.player.left = false;
-        break;
-      case "ArrowRight":
-        CONTROLS.player.right = false;
-        break;
-      default:
-        break;
-    }
-  };
-}
+var TEXTBOOK = {
+  initialized: false,
+  x : 0,
+  y : 0,
+  latest : {
+        x : 0,
+        y : 0
+    },
+  src : ""
+};
+
+var CHAIR = {
+  initialized: false,
+  x : 0,
+  y : 0,
+  latest : {
+        x : 0,
+        y : 0
+    },
+  src : ""
+};
+
+var CLUE = {
+  initialized: false,
+  x : 0,
+  y : 0,
+  latest : {
+        x : 0,
+        y : 0
+    },
+  src : ""
+};
+
+var BEAM = {
+  initialized: false,
+  x : 0,
+  y : 0,
+  theta: 0,
+  latest : {
+        x : 0,
+        y : 0
+    },
+  src : ""
+};
