@@ -4,8 +4,11 @@ var CONTROLS = {
     down : false,
     left : false,
     right : false
+  },
+  pane : {
+    open: false
   }
-};
+}
 
 if (PLAYER.multiplayer == false){
 
