@@ -17,7 +17,7 @@ var PLAYER = {
     },
   caught : false,
   onclue : false,
-  multiplayer : true,
+  multiplayer : false,
   src : ""
 };
 

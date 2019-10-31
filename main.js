@@ -1,3 +1,3 @@
 function Start(){
-  InitializePlayer();
+  InitializePlayer(false);
 }

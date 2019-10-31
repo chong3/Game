@@ -1,7 +1,3 @@
-var p1x = 0;
-var p1y = 0;
-
-
 
 function InitializePlayer(multi){
 
@@ -11,8 +7,11 @@ function InitializePlayer(multi){
 
   PLAYER = {
     initialized: true,
-    x : p1x,
-    y : p1y,
+    x : 500,
+    y : 500,
+    width: 75,
+    height: 100,
+    speed: 5,
     latest : {
         x : PLAYER.x,
         y : PLAYER.y,
@@ -20,7 +19,7 @@ function InitializePlayer(multi){
     caught : false,
     onclue : false,
     multiplayer: multi,
-    src : "playersolo.png"
+    src : "pics/playersolo.png"
   };
 }
 
@@ -28,7 +27,7 @@ function InitializePlayer(multi){
     if (!PLAYER.initialized) {
       return;
     }
-    var playerimg = new Image(7, 10);
+    var playerimg = new Image();
     playerimg.src = PLAYER.src;
-    context.drawImage(playerimg, PLAYER.latest.x, PLAYER.latest.y, 75, 100);
+    context.drawImage(playerimg, PLAYER.x, PLAYER.y, PLAYER.width, PLAYER.height);
 };

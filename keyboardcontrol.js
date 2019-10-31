@@ -51,7 +51,7 @@ if (PLAYER.multiplayer == false){
   });
 }
 
-else if (PLAYER.multiplayer = true){
+else if (PLAYER.multiplayer == true){
 
   document.addEventListener('keydown', function Event(){
     switch (event.key) {

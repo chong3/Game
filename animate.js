@@ -1,15 +1,19 @@
 function HandlePlayerMovement(){
-  if(CONTROLS.player.up = true && !PLAYER.y < 0){
-    PLAYER.y--;
+  //UP
+  if(CONTROLS.player.up == true && PLAYER.y >= 0){
+    PLAYER.y -= PLAYER.speed;
   }
-  if(CONTROLS.player.right = true && !PLAYER.x >GAME.canvas.width){
-    PLAYER.x++;
+  //RIGHT
+  if(CONTROLS.player.right == true && PLAYER.x <= (GAME.canvas.width-PLAYER.width)){
+    PLAYER.x += PLAYER.speed;
   }
-  if(CONTROLS.player.left = true && !PLAYER.x < 0){
-    PLAYER.x--;
+  //LEFT
+  if(CONTROLS.player.left == true && PLAYER.x >= 0){
+    PLAYER.x -= PLAYER.speed;
   }
-  if(CONTROLS.player.down = true && !PLAYER.y > GAME.canvas.height){
-    PLAYER.y++;
+  //DOWN
+  if(CONTROLS.player.down == true && PLAYER.y <= GAME.canvas.height - PLAYER.height){
+    PLAYER.y += PLAYER.speed;
   }
 }
 
