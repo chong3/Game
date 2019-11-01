@@ -47,7 +47,7 @@ function runGame() {
     RenderPlayer(context);
 //    RenderDesks(context);
 //    RenderChairs(context);
-//    RenderGuards(context);
+    RenderGuard(context);
 
   } else {
     context.font = "30px Arial";

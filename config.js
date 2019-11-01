@@ -11,6 +11,9 @@ var PLAYER = {
   initialized: false,
   x : 0,
   y : 0,
+  width: 0,
+  height: 0,
+  speed: 0,
   latest : {
         x : 0,
         y : 0
@@ -34,6 +37,7 @@ var DESK = {
 
 var GUARD = {
   initialized: false,
+  spotAng: 0,
   x : 0,
   y : 0,
   latest : {
