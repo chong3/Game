@@ -21,9 +21,10 @@ function HandleGuardMovement(){
 
   //Create an initial vector
   var initVector = Math.floor(Math.random() * 360);
-  RotateGuard()
-  //Proceed until a wall is hit
 
+  //Proceed until a wall is hit
+  GUARD.x += GUARD.speed * Math.sin(initVector);
+  GUARD.y -= GUARD.speed * Math.cos(initVector);
   //Create a new vector
 
   //Repeat

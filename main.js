@@ -1,3 +1,4 @@
 function Start(){
-  InitializePlayer(false);
+  InitializePlayer(true);
+  InitializeGuard(true);
 }

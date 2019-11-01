@@ -18,7 +18,7 @@ function InitializeGuard(multi){
         x : 0,
         y : 0
     },
-    src : "pics/guard.png"
+    src : "pics/guardsolo.png"
   };
 }
 
@@ -36,13 +36,13 @@ function RotateGuard(cx, cy, x, y, angle) {
 // angle    :   Angle in degrees of rotation
 function RotateAroundOrigin(x, y, angle) {
   return Rotate(0, 0, x, y, angle);
+}
 
 function RenderGuard(context) {
   if (!GUARD.initialized) {
     return;
   }
   var guardimg = new Image();
-    playerimg.src = GUARD.src;
+    guardimg.src = GUARD.src;
     context.drawImage(guardimg, GUARD.x, GUARD.y, GUARD.width, GUARD.height);
-};
 }
