@@ -19,6 +19,15 @@ function HandlePlayerMovement(){
 
 function HandleGuardMovement(){
 
+  //Create an initial vector
+  var initVector = Math.floor(Math.random() * 360);
+  RotateGuard()
+  //Proceed until a wall is hit
+
+  //Create a new vector
+
+  //Repeat
+
 }
 
 
@@ -36,7 +45,9 @@ function runGame() {
 
     // 3 - Draw new items
     RenderPlayer(context);
-    //RenderGuard(context);
+//    RenderDesks(context);
+//    RenderChairs(context);
+//    RenderGuards(context);
 
   } else {
     context.font = "30px Arial";
