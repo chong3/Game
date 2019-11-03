@@ -11,7 +11,7 @@ function InitializePlayer(multi){
     y : 500,
     width: 75,
     height: 100,
-    speed: 5,
+    speed: 3,
     latest : {
         x : PLAYER.x,
         y : PLAYER.y,

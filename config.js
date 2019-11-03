@@ -28,12 +28,22 @@ var DESK = {
   initialized: false,
   x : 0,
   y : 0,
+  width: 32,
+  height: 32,
   latest : {
         x : 0,
         y : 0
     },
-  src : ""
+  src : "pics/Table.png"
 };
+
+//Little desk function here
+function HandleGuardDeskCollision(){
+  if(GUARD.x > DESK.x && GUARD.x < (DESK.x + DESK.width) && GUARD.y > DESK.y && GUARD.y < (DESK.y + DESK.height)){
+    return false;
+  }
+    return true;
+}
 
 var GUARD = {
   initialized: false,

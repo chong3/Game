@@ -9,10 +9,10 @@ function InitializeGuard(multi){
   GUARD = {
     initialized: true,
     spotAng: 0,
-    x : 0,
-    y : 0,
-    width: 75,
-    height: 100,
+    x : 10,
+    y : 10,
+    width: 150,
+    height: 200,
     speed: 5,
     latest : {
         x : 0,
@@ -22,6 +22,19 @@ function InitializeGuard(multi){
   };
 }
 
+function HandleGuardCollision(){
+  if(GUARD.y > 0 && GUARD.x < (GAME.canvas.width-GUARD.width) && GUARD.x > 0 && GUARD.y < (GAME.canvas.height - GUARD.height) ){
+    return false;
+  }
+    return true;
+}
+
+
+
+// Rotate rotates a point around
+// cx, cy   :   The central point
+// x, y     :   The coordinates of point to be rotatedPoint
+// angle    :   Angle in degrees of rotation
 function RotateGuard(cx, cy, x, y, angle) {
     var radians = (Math.PI / 180) * angle,
         cos = Math.cos(radians),
