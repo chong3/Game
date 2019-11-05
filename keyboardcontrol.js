@@ -58,10 +58,10 @@ else if (PLAYER.multiplayer == true){
       case "w":
         CONTROLS.player.up = true;
         break;
-      case "ArrowDown":
+      case "d":
         CONTROLS.player.down = true;
         break;
-      case "a":
+      case "ArrowLeft":
         CONTROLS.player.left = true;
         break;
       case "ArrowRight":

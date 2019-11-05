@@ -11,6 +11,9 @@ var PLAYER = {
   initialized: false,
   x : 0,
   y : 0,
+  width: 0,
+  height: 0,
+  speed: 0,
   latest : {
         x : 0,
         y : 0
@@ -25,15 +28,18 @@ var DESK = {
   initialized: false,
   x : 0,
   y : 0,
+  width: 32,
+  height: 32,
   latest : {
         x : 0,
         y : 0
     },
-  src : ""
+  src : "pics/Table.png"
 };
 
 var GUARD = {
   initialized: false,
+  spotAng: 0,
   x : 0,
   y : 0,
   latest : {

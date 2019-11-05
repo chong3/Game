@@ -11,7 +11,7 @@ function InitializePlayer(multi){
     y : 500,
     width: 75,
     height: 100,
-    speed: 5,
+    speed: 3,
     latest : {
         x : PLAYER.x,
         y : PLAYER.y,
@@ -21,13 +21,15 @@ function InitializePlayer(multi){
     multiplayer: multi,
     src : "pics/playersolo.png"
   };
+
 }
 
-  function RenderPlayer(context) {
-    if (!PLAYER.initialized) {
-      return;
-    }
-    var playerimg = new Image();
-    playerimg.src = PLAYER.src;
-    context.drawImage(playerimg, PLAYER.x, PLAYER.y, PLAYER.width, PLAYER.height);
+function RenderPlayer(context) {
+  if (!PLAYER.initialized) {
+    return;
+  }
+
+  var playerimg = new Image();
+  playerimg.src = PLAYER.src;
+  context.drawImage(playerimg, PLAYER.x, PLAYER.y, PLAYER.width, PLAYER.height);
 };

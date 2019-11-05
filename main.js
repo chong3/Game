@@ -1,3 +1,5 @@
 function Start(){
-  InitializePlayer(false);
+  InitializePlayer(true);
+  InitializeGuard(true);
+  InitializeDesk(10,10);
 }

@@ -17,19 +17,19 @@ function HandlePlayerMovement(){
   }
 }
 
+var vector = Math.floor(Math.random() * 360);
+
 function HandleGuardMovement(){
-
-  //Create an initial vector
-  var initVector = Math.floor(Math.random() * 360);
-  RotateGuard()
-  //Proceed until a wall is hit
-
-  //Create a new vector
-
-  //Repeat
-
+  if(!HandleGuardCollision()){
+    GUARD.x += GUARD.speed * Math.sin(vector);
+    GUARD.y -= GUARD.speed * Math.cos(vector);
+  }
+  else {
+    vector = Math.floor(Math.random() * 360);
+    GUARD.x += GUARD.speed * Math.sin(vector);
+    GUARD.y -= GUARD.speed * Math.cos(vector);
+  }
 }
-
 
 function runGame() {
   var canvas = document.getElementById('mainCanvas');
@@ -38,16 +38,16 @@ function runGame() {
   if (GAME.started) {
     // 1 - Reposition the objects
     HandlePlayerMovement();
-    //HandleGuardMovement();
+    HandleGuardMovement();
 
     // 2 - Clear the CANVAS
     context.clearRect(0, 0, 1000, 1000);
 
     // 3 - Draw new items
     RenderPlayer(context);
-//    RenderDesks(context);
-//    RenderChairs(context);
-//    RenderGuards(context);
+    RenderDesk(context);
+//  RenderChairs(context);
+    RenderGuard(context);
 
   } else {
     context.font = "30px Arial";
