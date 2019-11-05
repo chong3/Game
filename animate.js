@@ -25,13 +25,11 @@ function HandleGuardMovement(){
     GUARD.y -= GUARD.speed * Math.cos(vector);
   }
   else {
-
-      vector = Math.floor(Math.random() * 360);
+    vector = Math.floor(Math.random() * 360);
     GUARD.x += GUARD.speed * Math.sin(vector);
     GUARD.y -= GUARD.speed * Math.cos(vector);
   }
 }
-
 
 function runGame() {
   var canvas = document.getElementById('mainCanvas');
@@ -47,8 +45,8 @@ function runGame() {
 
     // 3 - Draw new items
     RenderPlayer(context);
-//    RenderDesks(context);
-//    RenderChairs(context);
+    RenderDesk(context);
+//  RenderChairs(context);
     RenderGuard(context);
 
   } else {

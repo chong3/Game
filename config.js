@@ -37,14 +37,6 @@ var DESK = {
   src : "pics/Table.png"
 };
 
-//Little desk function here
-function HandleGuardDeskCollision(){
-  if(GUARD.x > DESK.x && GUARD.x < (DESK.x + DESK.width) && GUARD.y > DESK.y && GUARD.y < (DESK.y + DESK.height)){
-    return false;
-  }
-    return true;
-}
-
 var GUARD = {
   initialized: false,
   spotAng: 0,
