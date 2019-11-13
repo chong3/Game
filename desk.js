@@ -5,32 +5,54 @@ function HandleGuardDeskCollision(){
     return true;
 }
 
-function InitializeDesk(xPos, yPos){
+function InitializeDesk(){
 
   var canvas = document.getElementById('mainCanvas');
   var context = canvas.getContext('2d');
   context.scale(1,1);
+  var yInterval = GAME.canvas.height / 6;
 
   var DESK = {
-    initialized: false,
-    x : xPos,
-    y : yPos,
-    width: 32,
-    height: 32,
-    latest : {
-          x : 0,
-          y : 0
-      },
+    initialized : true,
+    x : [],
+    y : [100, yInterval + 100, yInterval*2 + 50, yInterval*3 + 50, yInterval*4 + 50, yInterval*5 + 50],
+    width: 45,
+    height: 45,
     src : "pics/Table.png"
   };
+  RandomizeDesk();
 }
 
 function RenderDesk(context) {
-  if (!DESK.initialized) {
-    return;
+  if (GAME.level != GAME.lastLevel) {
+    DESK.x = [];
+    RandomizeDesk();
+    GAME.lastLevel = GAME.level;
   }
-
   var deskimg = new Image();
   deskimg.src = DESK.src;
-  context.drawImage(deskimg, DESK.x, DESK.y, DESK.width, DESK.height);
-};
+  var count = 0;
+  for(var k = 0; k < DESK.y.length; k++)
+  {
+    for(var i = count * 3; i < count * 3 + 3; i++)
+    {
+      for(var j = 0; j <= 3; j++)
+      {
+          context.drawImage(deskimg, DESK.x[i] + j * DESK.width, DESK.y[k], DESK.width, DESK.height);
+      }
+      count++;
+    }
+    count = 0;
+  }
+}
+
+function RandomizeDesk(context){
+  for(var i = 0; i < 15; i++)
+  {
+    DESK.x[i] = Math.random() * 1000;
+    if(DESK.x[i] + DESK.width * 3 > GAME.canvas.width)
+    {
+      DESK.x[i] -= DESK.width * 4
+    }
+  }
+}

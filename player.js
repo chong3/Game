@@ -9,8 +9,8 @@ function InitializePlayer(multi){
     initialized: true,
     x : 500,
     y : 500,
-    width: 75,
-    height: 100,
+    width: 25,
+    height: 50,
     speed: 3,
     latest : {
         x : PLAYER.x,

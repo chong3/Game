@@ -20,6 +20,7 @@ function HandlePlayerMovement(){
 var vector = Math.floor(Math.random() * 360);
 
 function HandleGuardMovement(){
+  /*
   if(!HandleGuardCollision()){
     GUARD.x += GUARD.speed * Math.sin(vector);
     GUARD.y -= GUARD.speed * Math.cos(vector);
@@ -29,17 +30,37 @@ function HandleGuardMovement(){
     GUARD.x += GUARD.speed * Math.sin(vector);
     GUARD.y -= GUARD.speed * Math.cos(vector);
   }
+  */
+  var checkNum = checkGuard();
+  if(checkNum == 0)
+  {
+    GUARD.x += GUARD.speed;
+  }
+  else if(checkNum == 1)
+  {
+    GUARD.y -= GUARD.speed;
+  }
+  else if(checkNum == 2)
+  {
+    GUARD.x -= GUARD.speed;
+  }
+  else {
+    GUARD.y += GUARD.speed;
+  }
+}
+function HandleBeamMovement(){
+  BEAM.x = GUARD.x;
+  BEAM.y = GUARD.y;
 }
 
 function runGame() {
   var canvas = document.getElementById('mainCanvas');
   var context = canvas.getContext('2d');
-
   if (GAME.started) {
     // 1 - Reposition the objects
     HandlePlayerMovement();
     HandleGuardMovement();
-
+    HandleBeamMovement();
     // 2 - Clear the CANVAS
     context.clearRect(0, 0, 1000, 1000);
 
@@ -48,6 +69,7 @@ function runGame() {
     RenderDesk(context);
 //  RenderChairs(context);
     RenderGuard(context);
+    RenderBeam(context);
 
   } else {
     context.font = "30px Arial";

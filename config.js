@@ -1,10 +1,11 @@
 var GAME = {
   canvas : {
     width : 1000,
-    height : 1000
+    height : 750
   },
   started : true,
-  level : 1
+  level : 1,
+  lastLevel : 0
 };
 
 var PLAYER = {
