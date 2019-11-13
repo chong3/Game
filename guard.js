@@ -9,7 +9,7 @@ function InitializeGuard(){
     directions : [0, 90, 180, 270],
     x : 10,
     y : 10,
-    width : 50,
+    width : 60,
     height : 75,
     speed : 5,
     currentDirection : 0,

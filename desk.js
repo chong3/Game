@@ -10,49 +10,56 @@ function InitializeDesk(){
   var canvas = document.getElementById('mainCanvas');
   var context = canvas.getContext('2d');
   context.scale(1,1);
-  var yInterval = GAME.canvas.height / 6;
 
   var DESK = {
     initialized : true,
     x : [],
-    y : [100, yInterval + 100, yInterval*2 + 50, yInterval*3 + 50, yInterval*4 + 50, yInterval*5 + 50],
+    y : [],
     width: 45,
     height: 45,
     src : "pics/Table.png"
   };
-  RandomizeDesk();
+  RandomizeDeskX();
+  RandomizeDeskY();
 }
 
 function RenderDesk(context) {
   if (GAME.level != GAME.lastLevel) {
     DESK.x = [];
-    RandomizeDesk();
+    RandomizeDeskX();
+    RandomizeDeskY();
     GAME.lastLevel = GAME.level;
   }
   var deskimg = new Image();
   deskimg.src = DESK.src;
+  var i = 0;
+  var k = 0;
   var count = 0;
   for(var k = 0; k < DESK.y.length; k++)
   {
-    for(var i = count * 3; i < count * 3 + 3; i++)
+    for(i = count; i < count + 10; i++)
     {
-      for(var j = 0; j <= 3; j++)
-      {
-          context.drawImage(deskimg, DESK.x[i] + j * DESK.width, DESK.y[k], DESK.width, DESK.height);
-      }
-      count++;
+      context.drawImage(deskimg, DESK.x[i], DESK.y[k], DESK.width, DESK.height);
     }
-    count = 0;
+    count = i;
   }
 }
 
-function RandomizeDesk(context){
-  for(var i = 0; i < 15; i++)
+function RandomizeDeskX(context){
+  for(var i = 0; i < 50; i++)
   {
-    DESK.x[i] = Math.random() * 1000;
-    if(DESK.x[i] + DESK.width * 3 > GAME.canvas.width)
+    DESK.x[i] = Math.trunc(Math.random() * 1000);
+    if(DESK.x[i] + DESK.width > GAME.canvas.width)
     {
-      DESK.x[i] -= DESK.width * 4
+      DESK.x[i] -= DESK.width
     }
+  }
+}
+
+function RandomizeDeskY(context){
+  var count = 75;
+  for(var i = 0; i <= 5; i++)
+  {
+    DESK.y[i] = Math.trunc(Math.random() * count) + 50;
   }
 }
