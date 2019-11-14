@@ -79,9 +79,10 @@ function RenderGuard(context) {
 }
 function RenderBeam(context){
   context.beginPath();
-  context.moveTo(BEAM.x, BEAM.y);
-  context.lineTo(BEAM.x + BEAM.width / 2, BEAM.y + BEAM.height);
-  context.lineTo(BEAM.x - BEAM.width / 2, BEAM.y + BEAM.height);
+  context.lineWidth = "6";
+  context.strokeStyle = "yellow";
+  context.rect(BEAM.x, BEAM.y, BEAM.width, BEAM.height);
+  context.stroke();
   context.closePath();
 }
 function checkGuard(){

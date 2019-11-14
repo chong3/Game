@@ -67,7 +67,7 @@ function runGame() {
     // 3 - Draw new items
     RenderPlayer(context);
     RenderDesk(context);
-//  RenderChairs(context);
+  //  RenderChairs(context);
     RenderGuard(context);
     RenderBeam(context);
 
