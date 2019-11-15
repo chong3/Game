@@ -81,6 +81,7 @@ function RenderBeam(context){
   context.beginPath();
   context.lineWidth = "6";
   context.strokeStyle = "yellow";
+  //check the current direction of the guard to make the beam
   context.rect(BEAM.x, BEAM.y, BEAM.width, BEAM.height);
   context.stroke();
   context.closePath();

@@ -24,6 +24,15 @@ function InitializePlayer(multi){
 
 }
 
+function renderPlayerVision(context){
+  context.beginPath();
+  context.lineWidth = "6";
+  context.strokeStyle = "yellow";
+  context.arc(PLAYER.x+14, PLAYER.y+13, 100, 0, 2 * Math.PI);
+  context.stroke();
+  context.closePath();
+}
+
 function RenderPlayer(context) {
   if (!PLAYER.initialized) {
     return;
@@ -31,5 +40,6 @@ function RenderPlayer(context) {
 
   var playerimg = new Image();
   playerimg.src = PLAYER.src;
+  renderPlayerVision(context);
   context.drawImage(playerimg, PLAYER.x, PLAYER.y, PLAYER.width, PLAYER.height);
 };
