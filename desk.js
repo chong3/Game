@@ -40,7 +40,7 @@ function RenderDesk(context) {
     for(i = count; i < count + 10; i++)
     {
       context.drawImage(deskimg, DESK.x[i], DESK.y[i], DESK.width, DESK.height);
-      context.drawImage(deskimg, 100, 100, 100, 100);
+      
     }
     count = i;
   }

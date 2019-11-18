@@ -24,11 +24,20 @@ function InitializePlayer(multi){
 
 }
 
-function renderPlayerVision(context){
+function renderPlayerVisionCircle(context){
   context.beginPath();
   context.lineWidth = "6";
   context.strokeStyle = "yellow";
   context.arc(PLAYER.x+14, PLAYER.y+13, 100, 0, 2 * Math.PI);
+  context.stroke();
+  context.closePath();
+}
+
+function renderPlayerVisionSquare(context){
+  context.beginPath();
+  context.lineWidth = "6";
+  context.strokeStyle = "yellow";
+  context.rect(PLAYER.x-60, PLAYER.y-50, 150, 150);
   context.stroke();
   context.closePath();
 }
@@ -40,6 +49,7 @@ function RenderPlayer(context) {
 
   var playerimg = new Image();
   playerimg.src = PLAYER.src;
-  renderPlayerVision(context);
+  //renderPlayerVisionCircle(context);
+  renderPlayerVisionSquare(context);
   context.drawImage(playerimg, PLAYER.x, PLAYER.y, PLAYER.width, PLAYER.height);
 };

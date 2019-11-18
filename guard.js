@@ -82,7 +82,21 @@ function RenderBeam(context){
   context.lineWidth = "6";
   context.strokeStyle = "yellow";
   //check the current direction of the guard to make the beam
-  context.rect(BEAM.x, BEAM.y, BEAM.width, BEAM.height);
+
+  // if (GUARD.currentDirection == 0){
+  //   context.rect(BEAM.x, BEAM.y, BEAM.height+((GAME.level-1)*8), BEAM.width+((GAME.level-1)*8));
+  // }
+  // else if (GUARD.currentDirection == 1){
+  //   context.rect(BEAM.x, BEAM.y, BEAM.height+((GAME.level-1)*8), BEAM.width+((GAME.level-1)*8));
+  // }
+  // else if (GUARD.currentDirection == 2){
+  //   context.rect(BEAM.x, BEAM.y, BEAM.width+((GAME.level-1)*8), BEAM.height+((GAME.level-1)*8));
+  // }
+  // else{
+  //
+  // }
+
+  context.rect(BEAM.x, BEAM.y, BEAM.width+((GAME.level-1)*8), BEAM.height+((GAME.level-1)*8));
   context.stroke();
   context.closePath();
 }

@@ -25,6 +25,12 @@ var PLAYER = {
   src : ""
 };
 
+var VISION = {
+  width : 150,
+  height : 150,
+  
+};
+
 var DESK = {
   initialized: false,
   x : [],

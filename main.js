@@ -3,4 +3,5 @@ function Start(){
   InitializeGuard(true);
   RandomizeDeskX();
   InitializeDesk();
+  
 }
