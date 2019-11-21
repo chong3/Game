@@ -79,9 +79,25 @@ function RenderGuard(context) {
 }
 function RenderBeam(context){
   context.beginPath();
-  context.moveTo(BEAM.x, BEAM.y);
-  context.lineTo(BEAM.x + BEAM.width / 2, BEAM.y + BEAM.height);
-  context.lineTo(BEAM.x - BEAM.width / 2, BEAM.y + BEAM.height);
+  context.lineWidth = "6";
+  context.strokeStyle = "yellow";
+  //check the current direction of the guard to make the beam
+
+  // if (GUARD.currentDirection == 0){
+  //   context.rect(BEAM.x, BEAM.y, BEAM.height+((GAME.level-1)*8), BEAM.width+((GAME.level-1)*8));
+  // }
+  // else if (GUARD.currentDirection == 1){
+  //   context.rect(BEAM.x, BEAM.y, BEAM.height+((GAME.level-1)*8), BEAM.width+((GAME.level-1)*8));
+  // }
+  // else if (GUARD.currentDirection == 2){
+  //   context.rect(BEAM.x, BEAM.y, BEAM.width+((GAME.level-1)*8), BEAM.height+((GAME.level-1)*8));
+  // }
+  // else{
+  //
+  // }
+
+  context.rect(BEAM.x, BEAM.y, BEAM.width+((GAME.level-1)*8), BEAM.height+((GAME.level-1)*8));
+  context.stroke();
   context.closePath();
 }
 function checkGuard(){

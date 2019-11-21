@@ -25,10 +25,16 @@ var PLAYER = {
   src : ""
 };
 
+var VISION = {
+  width : 150,
+  height : 150,
+  
+};
+
 var DESK = {
   initialized: false,
-  x : 0,
-  y : 0,
+  x : [],
+  y : [],
   width: 32,
   height: 32,
   latest : {
@@ -87,6 +93,8 @@ var BEAM = {
   initialized: false,
   x : 0,
   y : 0,
+  width: 50,
+  height : 200,
   theta: 0,
   latest : {
         x : 0,

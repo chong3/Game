@@ -53,6 +53,49 @@ function HandleBeamMovement(){
   BEAM.y = GUARD.y;
 }
 
+function playerTopBetweenBeamHeight(){
+  if (((PLAYER.y+PLAYER.height/2) > BEAM.y-BEAM.height) &&
+      ((PLAYER.y+PLAYER.height/2) < BEAM.y+BEAM.height)){
+  return true;
+}
+return false;
+}
+
+function playerBottomBetweenBeamHeight(){
+  if (((PLAYER.y-PLAYER.height/2) > BEAM.y-BEAM.height) &&
+      ((PLAYER.y-PLAYER.height/2) < BEAM.y+BEAM.height)){
+  return true;
+}
+return false;
+}
+//rocket width = 60
+//rocket height = 120
+function playerLeftBetweenBeamWidth(){
+  if (((PLAYER.x-PLAYER.width/2) > BEAM.x- BEAM.width/2) &&
+      ((PLAYER.x-PLAYER.width/2) < BEAM.x+  BEAM.width/2)){
+  return true;
+}
+return false;
+}
+
+function playerRightBetweenBeamWidth(){
+  if (((PLAYER.x+PLAYER.width/2) > BEAM.x-BEAM.width/2) &&
+      ((PLAYER.x+PLAYER.width/2) < BEAM.x+BEAM.width/4)){
+  return true;
+}
+return false;
+}
+
+function checkPlayerInBeam(){
+
+  // if in beam, game.started = false;
+  if (PLAYER.x-60 < BEAM.x + BEAM.width  && PLAYER.x-60 + VISION.width  > BEAM.x &&
+		PLAYER.y-50 < BEAM.y + BEAM.height && PLAYER.y-50 + VISION.height > BEAM.y) {
+      GAME.started = false;
+}
+}
+
+
 function runGame() {
   var canvas = document.getElementById('mainCanvas');
   var context = canvas.getContext('2d');
@@ -61,13 +104,15 @@ function runGame() {
     HandlePlayerMovement();
     HandleGuardMovement();
     HandleBeamMovement();
+    checkPlayerInBeam();
     // 2 - Clear the CANVAS
     context.clearRect(0, 0, 1000, 1000);
 
     // 3 - Draw new items
     RenderPlayer(context);
     RenderDesk(context);
-//  RenderChairs(context);
+  //  RenderChairs(context);
+
     RenderGuard(context);
     RenderBeam(context);
 

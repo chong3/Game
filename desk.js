@@ -39,14 +39,15 @@ function RenderDesk(context) {
   {
     for(i = count; i < count + 10; i++)
     {
-      context.drawImage(deskimg, DESK.x[i], DESK.y[k], DESK.width, DESK.height);
+      context.drawImage(deskimg, DESK.x[i], DESK.y[i], DESK.width, DESK.height);
+      
     }
     count = i;
   }
 }
 
 function RandomizeDeskX(context){
-  for(var i = 0; i < 50; i++)
+  for(var i = 0; i < 25; i++)
   {
     DESK.x[i] = Math.trunc(Math.random() * 1000);
     if(DESK.x[i] + DESK.width > GAME.canvas.width)
@@ -57,9 +58,13 @@ function RandomizeDeskX(context){
 }
 
 function RandomizeDeskY(context){
-  var count = 75;
-  for(var i = 0; i <= 5; i++)
+
+  for(var i = 0; i <= 25; i++)
   {
-    DESK.y[i] = Math.trunc(Math.random() * count) + 50;
+    DESK.y[i] = Math.trunc(Math.random() * GAME.canvas.height);
+    if(DESK.y[i] + DESK.height > GAME.canvas.height)
+    {
+      DESK.y[i] -= DESK.height
+    }
   }
 }
