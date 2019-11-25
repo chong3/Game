@@ -42,6 +42,14 @@ function randomizeHints(){
   }
 }
 
+function drawHints(){
+  var image = new Image();
+  image.src = "pics/Clue.png";
+  for(var i = 0; i < ANSWER.clues.length; i++){
+    canvas.drawImage(image, ANSWER.clues[i].x, ANSWER.clues[i].y, 50, 50);
+  }
+}
+
 var vector = Math.floor(Math.random() * 360);
 
 function HandleGuardMovement(){
@@ -116,7 +124,7 @@ function checkPlayerInBeam(){
   if (PLAYER.x-60 < BEAM.x + BEAM.width  && PLAYER.x-60 + VISION.width  > BEAM.x &&
 		PLAYER.y-50 < BEAM.y + BEAM.height && PLAYER.y-50 + VISION.height > BEAM.y) {
       GAME.started = false;
-}
+    }
 }
 
 
