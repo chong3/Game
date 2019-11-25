@@ -28,7 +28,7 @@ var PLAYER = {
 var VISION = {
   width : 150,
   height : 150,
-  
+
 };
 
 var DESK = {
@@ -87,6 +87,11 @@ var CLUE = {
         y : 0
     },
   src : ""
+};
+
+var ANSWER = {
+  clue : [],
+  string : ""
 };
 
 var BEAM = {

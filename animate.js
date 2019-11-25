@@ -17,6 +17,31 @@ function HandlePlayerMovement(){
   }
 }
 
+function randomizeString(){
+  var length = Math.random() * 4 + 4;
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var charactersLength = characters.length;
+  for(var i = 0; i < length; i++){
+    ANSWER.string += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+}
+
+function randomizeHints(){
+  var xCoor = 0;
+  var yCoor = 0;
+  for(var i = 0; i < ANSWER.string.length; i++){
+    xCoor = Math.floor(Math.random() * GAME.canvas.width);
+    yCoor = Math.floor(Math.random() * GAME.canvas.height);
+    ANSWER.clues.push(
+      {
+        x : xCoor,
+        y : yCoor,
+        letter : ANSWER.string.charAt(i)
+      }
+    );
+  }
+}
+
 var vector = Math.floor(Math.random() * 360);
 
 function HandleGuardMovement(){
@@ -57,16 +82,16 @@ function playerTopBetweenBeamHeight(){
   if (((PLAYER.y+PLAYER.height/2) > BEAM.y-BEAM.height) &&
       ((PLAYER.y+PLAYER.height/2) < BEAM.y+BEAM.height)){
   return true;
-}
-return false;
+  }
+  return false;
 }
 
 function playerBottomBetweenBeamHeight(){
   if (((PLAYER.y-PLAYER.height/2) > BEAM.y-BEAM.height) &&
       ((PLAYER.y-PLAYER.height/2) < BEAM.y+BEAM.height)){
   return true;
-}
-return false;
+  }
+  return false;
 }
 //rocket width = 60
 //rocket height = 120
@@ -74,16 +99,15 @@ function playerLeftBetweenBeamWidth(){
   if (((PLAYER.x-PLAYER.width/2) > BEAM.x- BEAM.width/2) &&
       ((PLAYER.x-PLAYER.width/2) < BEAM.x+  BEAM.width/2)){
   return true;
-}
+  }
 return false;
 }
 
 function playerRightBetweenBeamWidth(){
-  if (((PLAYER.x+PLAYER.width/2) > BEAM.x-BEAM.width/2) &&
-      ((PLAYER.x+PLAYER.width/2) < BEAM.x+BEAM.width/4)){
-  return true;
-}
-return false;
+  if (((PLAYER.x+PLAYER.width/2) > BEAM.x-BEAM.width/2) && ((PLAYER.x+PLAYER.width/2) < BEAM.x+BEAM.width/4)){
+    return true;
+  }
+  return false;
 }
 
 function checkPlayerInBeam(){

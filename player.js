@@ -52,4 +52,4 @@ function RenderPlayer(context) {
   //renderPlayerVisionCircle(context);
   renderPlayerVisionSquare(context);
   context.drawImage(playerimg, PLAYER.x, PLAYER.y, PLAYER.width, PLAYER.height);
-};
+}
