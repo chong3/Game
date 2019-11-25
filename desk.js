@@ -40,7 +40,7 @@ function RenderDesk(context) {
     for(i = count; i < count + 10; i++)
     {
       context.drawImage(deskimg, DESK.x[i], DESK.y[i], DESK.width, DESK.height);
-      
+
     }
     count = i;
   }
@@ -66,5 +66,29 @@ function RandomizeDeskY(context){
     {
       DESK.y[i] -= DESK.height
     }
+  }
+}
+
+function randomizeString(){
+  var length = Math.random() * 4 + 4;
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var charactersLength = characters.length;
+  for(var i = 0; i < length; i++){
+    ANSWER.string += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+}
+
+function randomizeHints(){
+  var xCoor = 0;
+  var yCoor = 0;
+  for(var i = 0; i < ANSWER.string.length; i++){
+    xCoor = Math.floor(Math.random() * GAME.canvas.width);
+    yCoor = Math.floor(Math.random() * GAME.canvas.height);
+    ANSWER.clue.push(
+      {
+        x : xCoor,
+        y : yCoor,
+        letter : ANSWER.string.charAt(i)
+      });
   }
 }

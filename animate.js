@@ -15,38 +15,22 @@ function HandlePlayerMovement(){
   if(CONTROLS.player.down == true && PLAYER.y <= GAME.canvas.height - PLAYER.height){
     PLAYER.y += PLAYER.speed;
   }
+  checkCollision();
 }
 
-function randomizeString(){
-  var length = Math.random() * 4 + 4;
-  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var charactersLength = characters.length;
-  for(var i = 0; i < length; i++){
-    ANSWER.string += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-}
-
-function randomizeHints(){
-  var xCoor = 0;
-  var yCoor = 0;
-  for(var i = 0; i < ANSWER.string.length; i++){
-    xCoor = Math.floor(Math.random() * GAME.canvas.width);
-    yCoor = Math.floor(Math.random() * GAME.canvas.height);
-    ANSWER.clues.push(
-      {
-        x : xCoor,
-        y : yCoor,
-        letter : ANSWER.string.charAt(i)
-      }
-    );
-  }
-}
-
-function drawHints(){
+function drawHints(ctx){
   var image = new Image();
   image.src = "pics/Clue.png";
-  for(var i = 0; i < ANSWER.clues.length; i++){
-    canvas.drawImage(image, ANSWER.clues[i].x, ANSWER.clues[i].y, 50, 50);
+  for(var i = 0; i < ANSWER.clue.length; i++){
+    ctx.drawImage(image, ANSWER.clue[i].x, ANSWER.clue[i].y, 20, 20);
+  }
+}
+
+function checkCollision(){
+  for(var i = 0; i < ANSWER.clue.length; i++){
+    if(PLAYER.x == ANSWER.clue[i].x && PLAYER.y == ANSWER.clue[i].y){
+      alert(ANSWER.clue[i].letter);
+    }
   }
 }
 
@@ -147,7 +131,7 @@ function runGame() {
 
     RenderGuard(context);
     RenderBeam(context);
-
+    drawHints(context);
   } else {
     context.font = "30px Arial";
     context.fillText("Game Over      Level " + GAME.level, 135, 200);

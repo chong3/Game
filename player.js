@@ -1,4 +1,3 @@
-
 function InitializePlayer(multi){
 
   var canvas = document.getElementById('mainCanvas');

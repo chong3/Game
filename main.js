@@ -3,5 +3,6 @@ function Start(){
   InitializeGuard(true);
   RandomizeDeskX();
   InitializeDesk();
-  
+  randomizeString();
+  randomizeHints();
 }
